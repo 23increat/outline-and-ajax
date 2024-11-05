@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="STYLECSS.CSS">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<center>
+ <div class="container">
+    <div class="img_of_product"><img src="https://www.w3schools.com/images/w3schools_green.jpg" alt=""></div>
+    <div class="container_details"><div>kjfhbghpsiu</div></div>
+  </div>
+      
+  <div class = required>Name</div>
+</center>
+<br><br><br>
+<button id="button">get text file</button>
+<script>
+  //create event listener
+  document.getElementById('button').addEventListener('click',loadText);
+  function loadText(){
+    console.log('button clicked');
+
+    // create XHR Object\ 
+    var xhr = new XMLHttpRequest();
+
+    // OPEN -TYPE, URL/FILE,ASYNC
+    console.log(xhr);
+    xhr.open('GET','https://blog.hubspot.com/website/html-file-path',true);
+
+    xhr.onload = function(){
+      if(this.status == 200){
+        console.log(this.responseURL)
+      }
+    }
+    // send request
+    xhr.send();
+  }
+</script>
+</body>
+</html>
